@@ -6,6 +6,13 @@ __pycache__/
 # C extensions
 *.so
 
+/.bin
+*.bin
+*.buildozer
+.buildozer
+/.buildozer
+.buildozer
+
 # Distribution / packaging
 .Python
 build/
