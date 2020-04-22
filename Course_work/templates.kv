@@ -1,0 +1,198 @@
+ScreenManagerApp:
+    BaseScreen:
+    InfoDeviceScreen:
+    InfoFileSystemScreen:
+
+<BaseScreen>:
+    name: "BaseScreen"
+
+
+
+    BoxLayout:
+        padding: [75, 50, 75, 50]
+        orientation: 'vertical'
+        spacing: 20
+
+        Label:
+            size_hint: 1, .6
+            font_size: '45sp'
+            text: 'Select action'
+
+        Button:
+            size_hint: 1, .2
+            font_size: '25sp'
+            text: 'Info Device'
+            on_release: app.root.current = 'InfoDeviceScreen'
+        
+        Button:
+            size_hint: 1, .2
+            font_size: '25sp'
+            text: 'Info File System'
+            on_release: app.root.current = 'InfoFileSystemScreen'
+
+<InfoDeviceScreen>:
+    name: "InfoDeviceScreen"
+
+    property_1: property_1
+    property_2: property_2
+    property_3: property_3
+    property_4: property_4
+    property_5: property_5
+    property_6: property_6
+    property_7: property_7
+    property_8: property_8
+    property_9: property_9
+    property_10: property_10
+    property_11: property_11
+
+    ScrollView:
+        do_scroll_x: False
+        do_scroll_y: True
+        size_hint: 1, None
+        size: root.width, root.height
+
+        BoxLayout:
+            padding: [75, 50, 75, 50]
+            orientation: 'vertical'
+            spacing: 20
+
+            Label:
+                size_hint: 1, .1
+                font_size: '25sp'
+                text: 'Select action'
+
+            GridLayout:
+                cols: 2
+                size_hint: 1, .8
+
+                Label:
+                    font_size: '15sp'
+                    text: 'Machine'
+
+                Label:
+                    id: property_1
+                    font_size: '15sp'
+                    text: ''
+
+                Label:
+                    font_size: '15sp'
+                    text: 'Version'
+
+                Label:
+                    id: property_2
+                    font_size: '15sp'
+                    text: ''
+
+                Label:
+                    font_size: '15sp'
+                    text: 'Date set up version'
+
+                Label:
+                    id: property_3
+                    font_size: '15sp'
+                    text: ''
+
+                Label:
+                    font_size: '15sp'
+                    text: 'Bits'
+
+                Label:
+                    id: property_4
+                    font_size: '15sp'
+                    text: ''
+
+                Label:
+                    font_size: '15sp'
+                    text: 'Architecture'
+
+                Label:
+                    id: property_5
+                    font_size: '15sp'
+                    text: ''
+
+                Label:
+                    font_size: '15sp'
+                    text: 'Dist'
+
+                Label:
+                    id: property_6
+                    font_size: '15sp'
+                    text: ''
+
+                Label:
+                    font_size: '15sp'
+                    text: 'Java version'
+
+                Label:
+                    id: property_7
+                    font_size: '15sp'
+                    text: ''
+
+                Label:
+                    font_size: '15sp'
+                    text: 'Lib C'
+
+                Label:
+                    id: property_8
+                    font_size: '15sp'
+                    text: ''
+
+                Label:
+                    font_size: '15sp'
+                    text: 'Node'
+
+                Label:
+                    id: property_9
+                    font_size: '15sp'
+                    text: ''
+
+                Label:
+                    font_size: '15sp'
+                    text: 'System'
+
+                Label:
+                    id: property_10
+                    font_size: '15sp'
+                    text: ''
+
+                Label:
+                    font_size: '15sp'
+                    text: 'Proccesor'
+
+                Label:
+                    id: property_11
+                    font_size: '15sp'
+                    text: ''
+            Button:
+                size_hint: 1, .1
+                font_size: '25sp'
+                text: 'Get Info About Device'
+                on_release: root.get_info_about_device()
+
+            Button:
+                size_hint: 1, .1
+                font_size: '25sp'
+                text: 'Back'
+                on_release: app.root.current = 'BaseScreen'
+
+
+<InfoFileSystemScreen>:
+    name: "InfoFileSystemScreen"
+          
+    BoxLayout: 
+        padding: [75, 50, 75, 50]
+        orientation: 'vertical'
+        spacing: 20
+
+        FileChooserIconView:
+            path: "/data/data/org.test.myapp/files"
+            size_hint: 1, .9
+            on_selection: root.select(*args)
+
+        Button:
+            size_hint: 1, .1
+            font_size: '25sp'
+            text: 'Back'
+            on_release: app.root.current = 'BaseScreen'
+            
+        

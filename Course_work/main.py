@@ -1,11 +1,12 @@
-from kivy.app import App
-from kivy.uix.label import Label
-
-import platform
-
-class CourseApp(App):
-    def build(self):
-        return Label(text='{0}'.format(platform.machine()))
+from screen.info_device import InfoDeviceScreen
+from screen.info_file_system import InfoFileSystemScreen
+from screen.screen_manager_app import ScreenManagerApp
+from app import CourseApp
 
 
-CourseApp().run()
+def main():
+    CourseApp().run()
+
+
+if __name__ == "__main__":
+    main()
